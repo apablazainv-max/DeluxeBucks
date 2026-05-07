@@ -3,336 +3,408 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>You've Been Selected — Claim $25,000 Cash | DeluxeBucks</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<title>Claim Your $750 Cash App Gift Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --gold: #E8A200;
-  --gold-light: #FFD166;
-  --green: #00B341;
-  --green-dk: #008F33;
-  --red: #E53935;
-  --dark: #0D0D0D;
-  --surf: #181818;
-  --surf2: #202020;
-  --border: rgba(255,255,255,0.08);
-  --text: #F0F0F0;
+  --green: #00C244;
+  --purple: #6B4EFF;
+  --purple-dk: #5438e0;
+  --purple-pale: #F0EDFF;
+  --bg: #EAEEF0;
+  --white: #FFFFFF;
+  --border: #DCDFE3;
+  --text: #111111;
+  --muted: #6B7280;
+  --light: #9CA3AF;
+  --input-bg: #FAFAFA;
+  --progress: #6B4EFF;
 }
 
 body {
-  background: var(--dark);
+  background: var(--bg);
   color: var(--text);
-  font-family: 'Manrope', sans-serif;
+  font-family: 'Inter', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── URGENCY BAR ─── */
-.top-bar {
+/* ── TOP NOTICE ── */
+.top-notice {
   width: 100%;
-  background: #1a0a00;
-  border-bottom: 1px solid rgba(232,162,0,0.25);
-  padding: 10px 16px;
+  background: #1a1a2e;
+  padding: 9px 20px;
   text-align: center;
   font-size: 12px;
-  font-weight: 700;
-  color: var(--gold-light);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.04em;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
 
-.top-bar-dot {
-  width: 7px; height: 7px;
+.notice-dot {
+  width: 6px; height: 6px;
   background: var(--green);
   border-radius: 50%;
-  animation: pulse-dot 1.4s ease-in-out infinite;
+  animation: blink 1.4s ease-in-out infinite;
   flex-shrink: 0;
 }
 
-@keyframes pulse-dot {
-  0%,100% { opacity:1; transform:scale(1); }
-  50% { opacity:0.5; transform:scale(1.3); }
+@keyframes blink {
+  0%,100% { opacity:1; }
+  50% { opacity:0.3; }
 }
 
-/* ─── PAGE WRAPPER ─── */
-.page {
+/* ── MAIN WRAPPER ── */
+.wrap {
   width: 100%;
-  max-width: 480px;
-  padding: 0 18px 48px;
+  max-width: 520px;
+  padding: 32px 16px 48px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0;
 }
 
-/* ─── HERO ─── */
-.hero {
-  text-align: center;
-  padding: 22px 0 18px;
+/* ── CARD ── */
+.card {
   width: 100%;
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
 }
 
-.logo {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px;
-  font-weight: 800;
-  letter-spacing: 0.1em;
-  color: var(--gold);
-  margin-bottom: 14px;
+/* ── CARD HEADER — logo + title ── */
+.card-header {
+  padding: 28px 24px 20px;
+  text-align: center;
+  border-bottom: 1px solid #F3F4F6;
 }
-.logo em { color: #fff; font-style: normal; }
 
-.selected-pill {
+.cashapp-logo {
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   gap: 6px;
-  background: rgba(232,162,0,0.12);
-  border: 1px solid rgba(232,162,0,0.35);
-  color: var(--gold-light);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  padding: 5px 13px;
-  border-radius: 100px;
   margin-bottom: 18px;
 }
 
-.h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 1.1;
-  color: #fff;
-  margin-bottom: 6px;
+.cashapp-icon {
+  width: 56px; height: 56px;
+  background: var(--green);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,194,68,0.3);
 }
 
-.h1-prize {
-  font-family: 'Syne', sans-serif;
-  font-size: 68px;
-  font-weight: 800;
-  line-height: 1;
-  color: var(--gold);
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-  display: block;
+.cashapp-icon svg {
+  width: 32px; height: 32px;
+  fill: #fff;
 }
 
-.h1-sub {
-  font-family: 'Syne', sans-serif;
-  font-size: 28px;
+.cashapp-wordmark {
+  font-size: 18px;
   font-weight: 700;
-  color: #bbb;
-  margin-bottom: 14px;
+  color: var(--text);
+  letter-spacing: -0.01em;
 }
 
-.hero-desc {
-  font-size: 15px;
-  color: #888;
-  line-height: 1.6;
-  max-width: 360px;
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.card-title .amount {
+  color: var(--green);
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.5;
+  max-width: 340px;
   margin: 0 auto;
 }
 
-/* ─── TICKET ─── */
-.ticket {
-  width: 100%;
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  overflow: hidden;
-  margin: 20px 0;
+/* ── PROGRESS BAR ── */
+.progress-wrap {
+  padding: 16px 24px;
+  border-bottom: 1px solid #F3F4F6;
 }
 
-.ticket-top {
-  background: linear-gradient(135deg, #1c1000 0%, #2a1800 100%);
-  padding: 16px 18px;
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.progress-label span {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.progress-label .step-ind {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--purple);
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: #E5E7EB;
+  border-radius: 100px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 33%;
+  background: var(--purple);
+  border-radius: 100px;
+  transition: width 0.6s ease;
+}
+
+.progress-steps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.p-step {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  gap: 5px;
+  font-size: 11px;
+  color: #D1D5DB;
+  font-weight: 500;
 }
 
-.ticket-prize-block { line-height: 1; }
+.p-step.active { color: var(--purple); }
+.p-step.done { color: var(--green); }
 
-.ticket-label {
-  font-size: 10px;
+.p-step-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: #E5E7EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
   font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #666;
-  margin-bottom: 4px;
-}
-
-.ticket-amount {
-  font-family: 'Syne', sans-serif;
-  font-size: 46px;
-  font-weight: 800;
-  color: var(--gold);
-  line-height: 1;
-}
-
-.ticket-cash {
-  font-size: 13px;
-  color: #666;
-  margin-top: 3px;
-}
-
-.ticket-free-badge {
-  background: rgba(0,179,65,0.12);
-  border: 1px solid rgba(0,179,65,0.3);
-  border-radius: 10px;
-  padding: 8px 12px;
-  text-align: center;
+  color: #9CA3AF;
   flex-shrink: 0;
 }
-.ticket-free-badge .big { font-size: 13px; font-weight: 800; color: var(--green); display: block; }
-.ticket-free-badge .small { font-size: 10px; color: #555; text-transform: uppercase; letter-spacing: 0.06em; }
 
-/* ticket tear line */
-.ticket-tear {
-  position: relative;
-  height: 1px;
-  background: transparent;
+.p-step.active .p-step-dot {
+  background: var(--purple);
+  color: #fff;
+}
+
+.p-step.done .p-step-dot {
+  background: var(--green);
+  color: #fff;
+}
+
+/* ── GIFT BANNER ── */
+.gift-banner {
+  margin: 0 24px 0;
+  background: linear-gradient(135deg, #F0EDFF 0%, #E8F5FF 100%);
+  border: 1px solid #DDD6FE;
+  border-radius: 12px;
+  padding: 14px 16px;
   display: flex;
   align-items: center;
-}
-.ticket-tear::before,
-.ticket-tear::after {
-  content: '';
-  position: absolute;
-  width: 16px; height: 16px;
-  background: var(--dark);
-  border-radius: 50%;
-  border: 1px solid var(--border);
-}
-.ticket-tear::before { left: -8px; border-left: none; }
-.ticket-tear::after { right: -8px; border-right: none; }
-.ticket-tear-line {
-  flex: 1;
-  margin: 0 14px;
-  border-top: 1px dashed rgba(255,255,255,0.07);
+  gap: 14px;
+  margin: 16px 24px;
 }
 
-.ticket-body {
-  padding: 16px 18px 18px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.chk {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.45;
-}
-
-.chk-icon {
-  width: 20px; height: 20px;
-  min-width: 20px;
-  background: rgba(0,179,65,0.12);
-  border: 1px solid rgba(0,179,65,0.3);
-  border-radius: 50%;
+.gift-icon-wrap {
+  width: 48px; height: 48px;
+  min-width: 48px;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1px solid #DDD6FE;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  font-weight: 800;
-  color: var(--green);
-  margin-top: 2px;
+  font-size: 24px;
 }
 
-/* ─── COUNTDOWN ─── */
-.countdown {
-  width: 100%;
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 14px 18px 16px;
-  text-align: center;
-  margin-bottom: 18px;
-}
+.gift-info { flex: 1; }
 
-.cd-label {
+.gift-info .gift-label {
   font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #7C3AED;
+  margin-bottom: 3px;
+}
+
+.gift-info .gift-amount {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.gift-info .gift-desc {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.gift-badge {
+  background: var(--green);
+  color: #fff;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: #555;
-  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 100px;
+  white-space: nowrap;
 }
 
-.cd-blocks {
+/* ── CHECKLIST ── */
+.checklist {
+  padding: 0 24px 16px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   gap: 8px;
 }
 
+.chk-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+}
+
+.chk-circle {
+  width: 18px; height: 18px;
+  min-width: 18px;
+  background: #DCFCE7;
+  border: 1.5px solid #86EFAC;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  font-weight: 700;
+  color: #16A34A;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: #F3F4F6;
+  margin: 0 24px;
+}
+
+/* ── COUNTDOWN INSIDE CARD ── */
+.cd-section {
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #FAFAFA;
+  border-top: 1px solid #F3F4F6;
+  border-bottom: 1px solid #F3F4F6;
+}
+
+.cd-left {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.cd-left strong {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #9CA3AF;
+  margin-bottom: 2px;
+}
+
+.cd-timer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
 .cd-block {
-  background: #111;
-  border: 1px solid #252525;
-  border-radius: 10px;
-  width: 80px;
-  padding: 10px 8px 8px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  text-align: center;
+  min-width: 44px;
 }
 
 .cd-num {
-  font-family: 'Syne', sans-serif;
-  font-size: 38px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
   display: block;
-  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .cd-unit {
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 9px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #444;
+  color: var(--light);
+  margin-top: 2px;
   display: block;
-  margin-top: 4px;
 }
 
-.cd-sep {
-  font-family: 'Syne', sans-serif;
-  font-size: 30px;
-  font-weight: 800;
-  color: #252525;
-  line-height: 1;
-  padding-bottom: 14px;
+.cd-colon {
+  font-size: 18px;
+  font-weight: 700;
+  color: #D1D5DB;
+  padding-bottom: 8px;
 }
 
-/* ─── CTA BUTTON ─── */
-.cta-wrap { width: 100%; margin-bottom: 14px; }
+/* ── CTA SECTION ── */
+.cta-section {
+  padding: 20px 24px 22px;
+}
 
 .cta-btn {
   display: block;
   width: 100%;
-  background: var(--green);
+  background: var(--purple);
   color: #fff;
-  font-family: 'Manrope', sans-serif;
-  font-size: 17px;
-  font-weight: 800;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
   text-align: center;
-  padding: 18px 20px;
-  border-radius: 13px;
+  padding: 16px 20px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -340,245 +412,371 @@ body {
   position: relative;
   overflow: hidden;
   margin-bottom: 10px;
-  transition: background 0.15s, transform 0.15s;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+  box-shadow: 0 4px 14px rgba(107,78,255,0.35);
 }
 
 .cta-btn::after {
   content: '';
   position: absolute;
   top: 0; left: -100%; width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-  animation: shine 2.8s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shine 2.6s ease-in-out infinite;
 }
 
 @keyframes shine {
   0%   { left: -100%; }
-  60%  { left: 140%; }
+  55%  { left: 140%; }
   100% { left: 140%; }
 }
 
-.cta-btn:hover { background: var(--green-dk); transform: translateY(-1px); }
-
-.legal-note {
-  font-size: 11px;
-  color: #444;
-  text-align: center;
-  line-height: 1.55;
+.cta-btn:hover {
+  background: var(--purple-dk);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(107,78,255,0.4);
 }
-.legal-note a { color: #444; text-decoration: underline; }
 
-/* ─── SOCIAL PROOF ROW ─── */
-.social-row {
+.legal-line {
+  font-size: 11px;
+  color: #9CA3AF;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.legal-line a { color: #9CA3AF; text-decoration: underline; }
+
+/* ── SOCIAL PROOF CARD ── */
+.social-card {
+  width: 100%;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  padding: 14px 18px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 14px;
-  width: 100%;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
 .av-stack { display: flex; }
 .av {
-  width: 28px; height: 28px;
+  width: 30px; height: 30px;
   border-radius: 50%;
-  border: 2px solid var(--dark);
-  background: var(--surf2);
+  border: 2px solid var(--bg);
+  background: #E5E7EB;
   display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 800;
-  color: var(--gold);
-  margin-left: -8px;
+  font-size: 9px; font-weight: 700;
+  color: #374151;
+  margin-left: -9px;
 }
 .av:first-child { margin-left: 0; }
+.av.green { background: #DCFCE7; color: #16A34A; }
+.av.purple { background: var(--purple-pale); color: var(--purple); }
+.av.blue { background: #DBEAFE; color: #1D4ED8; }
+.av.orange { background: #FEF3C7; color: #D97706; }
 
-.social-txt { font-size: 13px; color: #666; }
-.social-txt b { color: #bbb; font-weight: 700; }
+.social-text {
+  flex: 1;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.4;
+}
 
-/* ─── TRUST BADGES ─── */
+.social-text b { color: var(--text); font-weight: 600; }
+
+/* ── TRUST ROW ── */
 .trust-row {
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  margin-bottom: 20px;
   width: 100%;
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: 13px;
+  display: flex;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
   overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .trust-item {
   flex: 1;
+  padding: 12px 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 12px 4px;
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 600;
+  color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: #555;
-  border-right: 1px solid var(--border);
+  border-right: 1px solid #F3F4F6;
+  text-align: center;
 }
 .trust-item:last-child { border-right: none; }
-.trust-icon { font-size: 16px; }
+.trust-icon { font-size: 17px; }
 
-/* ─── WINNERS TICKER ─── */
+/* ── HOW IT WORKS ── */
+.hiw {
+  width: 100%;
+  background: var(--white);
+  border-radius: 16px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  padding: 22px 22px;
+  margin-bottom: 20px;
+}
+
+.hiw-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.hiw-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hiw-step {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.hiw-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  width: 2px;
+  height: calc(100% - 10px);
+  background: #F3F4F6;
+}
+
+.hiw-num {
+  width: 32px; height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: var(--purple-pale);
+  border: 2px solid #DDD6FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--purple);
+  position: relative;
+  z-index: 1;
+}
+
+.hiw-content {
+  padding: 4px 0 18px;
+  flex: 1;
+}
+
+.hiw-step:last-child .hiw-content { padding-bottom: 0; }
+
+.hiw-step-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 3px;
+}
+
+.hiw-step-desc {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+/* ── TICKER ── */
 .ticker-wrap {
   width: 100%;
-  background: var(--surf);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  background: var(--white);
+  border-radius: 10px;
   padding: 11px 0;
   overflow: hidden;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
 }
 
 .ticker-inner {
   display: flex;
-  gap: 32px;
+  gap: 28px;
   white-space: nowrap;
-  animation: ticker-scroll 20s linear infinite;
+  animation: scroll 22s linear infinite;
 }
 
 .ticker-item {
   font-size: 12px;
-  color: #555;
+  color: var(--muted);
   flex-shrink: 0;
 }
-.ticker-item b { color: var(--gold); font-weight: 700; }
+.ticker-item b { color: var(--green); font-weight: 600; }
 
-@keyframes ticker-scroll {
+@keyframes scroll {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-/* ─── SECOND CTA BLOCK ─── */
+/* ── SECOND CTA ── */
 .second-cta {
   width: 100%;
-  background: var(--surf);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 18px;
-  margin-bottom: 24px;
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  padding: 20px 22px;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-.second-cta-label {
-  font-size: 13px;
-  color: #555;
-  margin-bottom: 12px;
+.second-cta p {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 14px;
   line-height: 1.5;
 }
 
-.second-cta-label b { color: #999; }
+.second-cta p b { color: var(--text); }
 
-/* ─── FOOTER ─── */
+/* ── FOOTER ── */
 footer {
   width: 100%;
   text-align: center;
   font-size: 11px;
-  color: #333;
+  color: #C0C4CC;
   line-height: 1.7;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
 }
-footer a { color: #333; text-decoration: underline; }
+footer a { color: #C0C4CC; text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<!-- URGENCY BAR -->
-<div class="top-bar">
-  <span class="top-bar-dot"></span>
-  LIVE · Only 3 spots left — Offer expires when timer hits zero
+<!-- TOP NOTICE -->
+<div class="top-notice">
+  <span class="notice-dot"></span>
+  Limited availability — Your gift card spot expires soon
 </div>
 
-<div class="page">
+<div class="wrap">
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="logo"><em>DELUXE</em>BUCKS</div>
-    <div class="selected-pill">🎯 Your profile was selected</div>
-    <p class="h1">You've Been Chosen To</p>
-    <span class="h1-prize">$25,000</span>
-    <p class="h1-sub">Cash Sweepstakes</p>
-    <p class="hero-desc">Your entry spot has been reserved. Confirm it for free before it's reassigned to another user.</p>
-  </div>
+  <!-- MAIN CARD -->
+  <div class="card">
 
-  <!-- TICKET CARD -->
-  <div class="ticket">
-    <div class="ticket-top">
-      <div class="ticket-prize-block">
-        <p class="ticket-label">Grand Prize Value</p>
-        <p class="ticket-amount">$25,000</p>
-        <p class="ticket-cash">Cash · US Residents · 18+</p>
+    <!-- HEADER -->
+    <div class="card-header">
+      <div class="cashapp-logo">
+        <div class="cashapp-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.608 6.507c.913.245 1.74.7 2.392 1.326l1.62-1.92C16.56 4.88 15.07 4.2 13.393 4.01L13.608 6.507zM12.72 17.493c-.983-.135-1.872-.553-2.568-1.17l-1.62 1.92c.96 1.033 2.43 1.713 4.188 1.757V17.493zM10.392 8.22c.552-.346 1.224-.542 1.944-.542.528 0 1.032.108 1.488.3l.96-2.04A6.28 6.28 0 0012.336 5.5c-1.08 0-2.112.27-3.012.75L10.392 8.22zM13.848 15.78a3.54 3.54 0 01-1.512.33c-.66 0-1.272-.168-1.8-.468l-.984 2.07c.72.348 1.524.558 2.388.594v2.007l2.4-.408-.036-2.19c.612-.192 1.176-.492 1.656-.9l-2.112-1.035zM9 12c0-.558.12-1.086.336-1.566l-2.22-.924A6.47 6.47 0 006.6 12c0 1.014.228 1.974.636 2.832l2.184-1.044A4.016 4.016 0 019 12zM15.012 9.978l2.052-1.17A6.427 6.427 0 0117.4 12c0 .972-.216 1.896-.6 2.724l-2.1-1.032c.192-.51.3-1.056.3-1.632 0-.384-.054-.756-.144-1.104l.156.022z"/>
+          </svg>
+        </div>
+        <span class="cashapp-wordmark">Cash App</span>
       </div>
-      <div class="ticket-free-badge">
-        <span class="big">FREE</span>
-        <span class="small">Entry</span>
+      <h1 class="card-title">Claim Your <span class="amount">$750</span> Gift Card</h1>
+      <p class="card-subtitle">You've been selected to claim a $750 Cash App gift card. Confirm your spot below before it expires.</p>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="progress-wrap">
+      <div class="progress-label">
+        <span>Your progress</span>
+        <span class="step-ind">Step 1 of 3</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <div class="progress-steps">
+        <div class="p-step active">
+          <div class="p-step-dot">1</div>
+          Confirm
+        </div>
+        <div class="p-step">
+          <div class="p-step-dot">2</div>
+          Complete
+        </div>
+        <div class="p-step">
+          <div class="p-step-dot">3</div>
+          Receive
+        </div>
       </div>
     </div>
-    <div class="ticket-tear">
-      <div class="ticket-tear-line"></div>
-    </div>
-    <div class="ticket-body">
-      <div class="chk">
-        <span class="chk-icon">✓</span>
-        <span>100% free to enter — no purchase ever required</span>
-      </div>
-      <div class="chk">
-        <span class="chk-icon">✓</span>
-        <span>Takes less than 10 seconds to confirm your spot</span>
-      </div>
-      <div class="chk">
-        <span class="chk-icon">✓</span>
-        <span>Winner selected by certified random draw</span>
-      </div>
-      <div class="chk">
-        <span class="chk-icon">✓</span>
-        <span>Cash paid directly — no vouchers, no gimmicks</span>
-      </div>
-    </div>
-  </div>
 
-  <!-- COUNTDOWN -->
-  <div class="countdown">
-    <p class="cd-label">⏱ Your spot expires in</p>
-    <div class="cd-blocks">
-      <div class="cd-block">
-        <span class="cd-num" id="mins">09</span>
-        <span class="cd-unit">Min</span>
+    <!-- GIFT BANNER -->
+    <div class="gift-banner">
+      <div class="gift-icon-wrap">🎁</div>
+      <div class="gift-info">
+        <p class="gift-label">Your reserved gift</p>
+        <p class="gift-amount">$750 Cash App</p>
+        <p class="gift-desc">Digital Gift Card · US Residents · 18+</p>
       </div>
-      <span class="cd-sep">:</span>
-      <div class="cd-block">
-        <span class="cd-num" id="secs">47</span>
-        <span class="cd-unit">Sec</span>
+      <span class="gift-badge">FREE</span>
+    </div>
+
+    <!-- CHECKLIST -->
+    <div class="checklist">
+      <div class="chk-row">
+        <span class="chk-circle">✓</span>
+        <span>No purchase necessary — completely free to claim</span>
+      </div>
+      <div class="chk-row">
+        <span class="chk-circle">✓</span>
+        <span>Takes less than 60 seconds to confirm your spot</span>
+      </div>
+      <div class="chk-row">
+        <span class="chk-circle">✓</span>
+        <span>Gift card delivered directly to your Cash App account</span>
       </div>
     </div>
-  </div>
 
-  <!-- MAIN CTA -->
-  <div class="cta-wrap">
-    <a href="https://afflat3c2.com/trk/lnk/6B8DE429-9EE9-49AE-B410-51540140ECAE/?o=21805&c=918277&a=793816&k=5156CF430E7C57184EABEB3226BEED0C&l=22649" class="cta-btn">✓ Confirm My Free Entry →</a>
-    <p class="legal-note">
-      By clicking you agree to our <a href="#">Terms</a> & <a href="#">Privacy Policy</a>.
-      No purchase required. Open to US residents 18+. Void where prohibited.
-    </p>
-  </div>
+    <div class="divider"></div>
+
+    <!-- COUNTDOWN -->
+    <div class="cd-section">
+      <div class="cd-left">
+        <strong>Your spot expires in</strong>
+        Don't let it go to someone else
+      </div>
+      <div class="cd-timer">
+        <div class="cd-block">
+          <span class="cd-num" id="mins">09</span>
+          <span class="cd-unit">Min</span>
+        </div>
+        <span class="cd-colon">:</span>
+        <div class="cd-block">
+          <span class="cd-num" id="secs">47</span>
+          <span class="cd-unit">Sec</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-section">
+      <a href="YOUR_AFFILIATE_LINK_HERE" class="cta-btn">
+        Claim My $750 Gift Card →
+      </a>
+      <p class="legal-line">
+        By clicking you agree to our <a href="#">Terms</a> &amp; <a href="#">Privacy Policy</a>.
+        Available to US residents 18+. No purchase required.
+      </p>
+    </div>
+
+  </div><!-- end .card -->
 
   <!-- SOCIAL PROOF -->
-  <div class="social-row">
+  <div class="social-card">
     <div class="av-stack">
-      <div class="av">JM</div>
-      <div class="av">AK</div>
-      <div class="av">TR</div>
-      <div class="av">LP</div>
-      <div class="av">+</div>
+      <div class="av green">JM</div>
+      <div class="av purple">AK</div>
+      <div class="av blue">TR</div>
+      <div class="av orange">LP</div>
     </div>
-    <span class="social-txt"><b id="entry-count">4,821</b> people entered today</span>
+    <p class="social-text"><b id="entry-count">3,847</b> people confirmed their gift card today</p>
   </div>
 
-  <!-- TRUST ROW -->
+  <!-- TRUST -->
   <div class="trust-row">
     <div class="trust-item">
       <span class="trust-icon">🔒</span>
@@ -589,54 +787,78 @@ footer a { color: #333; text-decoration: underline; }
       Verified
     </div>
     <div class="trust-item">
-      <span class="trust-icon">🎯</span>
-      Free Entry
+      <span class="trust-icon">🎁</span>
+      Free Gift
     </div>
     <div class="trust-item">
       <span class="trust-icon">💵</span>
-      Cash Prize
+      $750 Value
     </div>
   </div>
 
-</div><!-- end .page -->
+  <!-- HOW IT WORKS -->
+  <div class="hiw">
+    <p class="hiw-title">How it works</p>
+    <div class="hiw-steps">
+      <div class="hiw-step">
+        <div class="hiw-num">1</div>
+        <div class="hiw-content">
+          <p class="hiw-step-title">Confirm your details</p>
+          <p class="hiw-step-desc">Click the button above and submit your information to verify your eligibility for the $750 gift card.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">2</div>
+        <div class="hiw-content">
+          <p class="hiw-step-title">Complete a short activity</p>
+          <p class="hiw-step-desc">Try a sponsored app or engage with a quick offer from one of our partners to unlock your reward.</p>
+        </div>
+      </div>
+      <div class="hiw-step">
+        <div class="hiw-num">3</div>
+        <div class="hiw-content">
+          <p class="hiw-step-title">Receive your gift card</p>
+          <p class="hiw-step-desc">Your $750 Cash App gift card is sent directly to the account linked to your submitted details.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- WINNERS TICKER -->
-<div class="ticker-wrap">
+</div><!-- end .wrap -->
+
+<!-- TICKER -->
+<div class="ticker-wrap" style="max-width:520px; margin: 0 16px 20px; width: calc(100% - 32px);">
   <div class="ticker-inner">
-    <span class="ticker-item">🏆 <b>Mike T. from Texas</b> won $500 last week</span>
-    <span class="ticker-item">🏆 <b>Sarah K. from Florida</b> won $1,200 last month</span>
-    <span class="ticker-item">🏆 <b>Jason R. from Ohio</b> won $850 in March</span>
-    <span class="ticker-item">🏆 <b>Linda P. from California</b> won $2,000 last draw</span>
-    <span class="ticker-item">🏆 <b>Dave M. from New York</b> won $750 recently</span>
-    <!-- duplicate for seamless loop -->
-    <span class="ticker-item">🏆 <b>Mike T. from Texas</b> won $500 last week</span>
-    <span class="ticker-item">🏆 <b>Sarah K. from Florida</b> won $1,200 last month</span>
-    <span class="ticker-item">🏆 <b>Jason R. from Ohio</b> won $850 in March</span>
-    <span class="ticker-item">🏆 <b>Linda P. from California</b> won $2,000 last draw</span>
-    <span class="ticker-item">🏆 <b>Dave M. from New York</b> won $750 recently</span>
+    <span class="ticker-item">🎁 <b>Jessica M. from Texas</b> claimed her gift card yesterday</span>
+    <span class="ticker-item">🎁 <b>Carlos R. from Florida</b> received $750 last week</span>
+    <span class="ticker-item">🎁 <b>Amanda K. from Ohio</b> claimed her reward this morning</span>
+    <span class="ticker-item">🎁 <b>Tyler B. from California</b> received his card last month</span>
+    <span class="ticker-item">🎁 <b>Priya S. from New York</b> claimed her gift 2 days ago</span>
+    <span class="ticker-item">🎁 <b>Jessica M. from Texas</b> claimed her gift card yesterday</span>
+    <span class="ticker-item">🎁 <b>Carlos R. from Florida</b> received $750 last week</span>
+    <span class="ticker-item">🎁 <b>Amanda K. from Ohio</b> claimed her reward this morning</span>
+    <span class="ticker-item">🎁 <b>Tyler B. from California</b> received his card last month</span>
+    <span class="ticker-item">🎁 <b>Priya S. from New York</b> claimed her gift 2 days ago</span>
   </div>
 </div>
 
-<!-- SECOND CTA BLOCK -->
-<div class="page" style="padding-top:0;">
+<!-- SECOND CTA -->
+<div style="max-width:520px; width:calc(100% - 32px); margin: 0 16px;">
   <div class="second-cta">
-    <p class="second-cta-label">
-      Still here? <b>Your spot is still reserved</b> — but the clock is ticking.<br>
-      Don't let someone else take your $25,000.
-    </p>
-    <a href="https://afflat3c2.com/trk/lnk/6B8DE429-9EE9-49AE-B410-51540140ECAE/?o=21805&c=918277&a=793816&k=5156CF430E7C57184EABEB3226BEED0C&l=22649" class="cta-btn" style="margin-bottom:0;">
-      🎯 Claim My $25,000 Entry — It's Free →
+    <p>Still reading? <b>Your $750 gift card is still reserved</b> — but your spot expires when the timer hits zero.</p>
+    <a href="YOUR_AFFILIATE_LINK_HERE" class="cta-btn" style="margin-bottom:0;">
+      🎁 Claim My Gift Card Now — It's Free →
     </a>
   </div>
 
   <footer>
-    Sweepstakes promotion. No purchase necessary to enter or win. Open to legal residents of the 50 United States &amp; D.C., age 18+. Void where prohibited. Winner selected by random drawing. Odds depend on total eligible entries received.<br><br>
+    Consumer rewards promotion. No purchase necessary. Open to legal US residents 18+. Void where prohibited. Reward subject to offer completion requirements.<br><br>
     <a href="#">Privacy Policy</a> &nbsp;·&nbsp; <a href="#">Terms &amp; Conditions</a> &nbsp;·&nbsp; <a href="#">Contact</a>
   </footer>
 </div>
 
 <script>
-  /* ── Countdown ── */
+  /* Countdown */
   let total = 9 * 60 + 47;
   const mEl = document.getElementById('mins');
   const sEl = document.getElementById('secs');
@@ -644,24 +866,33 @@ footer a { color: #333; text-decoration: underline; }
   function tick() {
     if (total <= 0) { total = 9 * 60 + 47; }
     total--;
-    mEl.textContent = String(Math.floor(total / 60)).padStart(2,'0');
-    sEl.textContent = String(total % 60).padStart(2,'0');
+    const m = Math.floor(total / 60);
+    const s = total % 60;
+    mEl.textContent = String(m).padStart(2,'0');
+    sEl.textContent = String(s).padStart(2,'0');
     if (total < 120) {
-      mEl.style.color = '#E53935';
-      sEl.style.color = '#E53935';
+      mEl.style.color = '#DC2626';
+      sEl.style.color = '#DC2626';
     }
   }
   setInterval(tick, 1000);
 
-  /* ── Live entry counter ── */
+  /* Progress bar animate on load */
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('progress-fill').style.width = '33%';
+    }, 400);
+  });
+
+  /* Live counter */
   const countEl = document.getElementById('entry-count');
-  let count = 4821;
+  let count = 3847;
   setInterval(() => {
-    if (Math.random() > 0.55) {
+    if (Math.random() > 0.5) {
       count += Math.floor(Math.random() * 3) + 1;
       countEl.textContent = count.toLocaleString();
     }
-  }, 6500);
+  }, 7500);
 </script>
 </body>
 </html>
